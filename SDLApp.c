@@ -15,9 +15,6 @@ SDL_DisplayID* get_display_id(void){
                              "No Displays Found: %s\n",
                              SDL_GetError());
                 return NULL;
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION,
-                        "Couldn't create window or renderer: %s\n",
-                        SDL_GetError());
         }
 #ifdef DEBUG
         SDL_Log("Found %d display(s)\n", num_displays);
@@ -67,12 +64,12 @@ bool initialize_window(void){
 		return false;
 	}
 
-
         if(!get_display_dimensions(&window_width, &window_height)){
 
                 SDL_LogError(SDL_LOG_CATEGORY_APPLICATION,
                              "Couldn't get windows dimensions: %s\n",
                              SDL_GetError());
+                return false;
         }
 
         if(!SDL_CreateWindowAndRenderer(title,
