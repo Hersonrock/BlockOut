@@ -1,13 +1,27 @@
-#include "stdio.h"
-#include <SDL3/SDL.h>
-#include <stdbool.h>
-#include <SDL3/SDL_main.h>
+#include "SDLApp.h"
 
+
+void process_input(void){
+}
+
+void update(void){
+}
+
+void render(void){
+}
+
+void free_resources(void){
+}
 int main(int argc, char* argv[]) {
-	if (!SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_EVENTS)) {
-		fprintf(stderr, "Failed to Initialize SDL\n");
-		return false;
-	}
-	printf("Hello, World\n");
+        bool is_running = initialize_window();
+        setup();
+        while(is_running){
+                process_input();
+                update();
+                render();
+        }
+        destroy_window();
+        free_resources();
+
 	return true;
 }
