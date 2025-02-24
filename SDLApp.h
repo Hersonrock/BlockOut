@@ -9,11 +9,9 @@
 const char* title;
 extern uint32_t window_width;
 extern uint32_t window_height;
-extern uint32_t* color_buffer;
 
 extern SDL_Window* window;
 extern SDL_Renderer* renderer;
-extern SDL_Texture* color_buffer_texture;
 
 SDL_DisplayID* displays;
 
