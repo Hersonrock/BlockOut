@@ -161,9 +161,11 @@
   <ItemGroup>
     <ClCompile Include="main.c" />
     <ClCompile Include="SDLApp.c" />
+    <ClCompile Include="SDLTime.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SDLApp.h" />
+    <ClInclude Include="SDLTime.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
