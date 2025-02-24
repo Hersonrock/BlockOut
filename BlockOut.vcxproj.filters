@@ -24,12 +24,18 @@
     <ClCompile Include="SDLTime.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SDLInput.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SDLApp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SDLTime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDLInput.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
