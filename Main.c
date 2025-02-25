@@ -5,30 +5,38 @@
 
 SDL_FPoint *points = NULL;
 
-SDL_FPoint point = {
-        .x = 200,
-        .y = 200
-};
+void create_game_grid(uint32_t window_width, uint32_t window_height){
 
-SDL_FPoint point1 = {
-        .x = 400,
-        .y = 400
-};
-SDL_FPoint point2 = {
-        .x = 200,
-        .y = 400
-};
-SDL_FPoint point3 = {
-        .x = 400,
-        .y = 200
-};
+        //0.066f and 0.81 are the percentage of the screen where
+        //the play screen is fixed on. I did this so it could be dynamic
+        SDL_FPoint point = {
+                .x = window_width * 0.066f,
+                .y = 1
+        };
+        SDL_FPoint point1 = {
+                .x = window_width * 0.066f,
+                .y = window_height - 1 
+        };
+        SDL_FPoint point2 = {
+                .x = window_width * 0.81f,
+                .y =  window_height - 1
+        };
+        SDL_FPoint point3 = {
+                .x = window_width * 0.81f,
+                .y = 1 
+        };
+        
+        array_push(points, point);
+        array_push(points, point1);
+        array_push(points, point2);
+        array_push(points, point3);
+}
+
+
 
 void update(void){
         frame_time_control();
-        array_push(points, point);
-        array_push(points, point2);
-        array_push(points, point1);
-        array_push(points, point3);
+        create_game_grid(window_width, window_height);
 }
 
 void render(void){
